@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3e4a3d;
+  padding: 0 20px;
+  height: 100px;
+}
+
+header form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+header form label {
+  color: #ffffff;
+}
+
+header form input,
+header form select {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+header form button {
+  background: linear-gradient(to bottom, #e27c00, #c86400);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header form button:hover {
+  background: linear-gradient(to bottom, #ff8c00, #ed7600);
+}
+
+.balance {
+  background: linear-gradient(to bottom, #e27c00, #c86400);
+  border-radius: 8px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 50px;
+}
+
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 85vh;
+}
+
+.sidebar {
+  border-top: 1px solid grey;
+  width: 300px;
+  padding: 20px;
+  background-color: #3e4a3d;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: linear-gradient(to bottom, #e27c00, #c86400);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: linear-gradient(to bottom, #ff8c00, #ed7600);
+}
+
+.card-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #4f7061;
+  overflow-y: auto;
+}
+
+.expense-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.expense-card span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.expense-card .category {
+  color: #777;
+  font-size: 1rem;
+  display: block;
+}
+
+.expense-card .sum {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 1px solid #a7a7a7;
+}
+
+.expense-cont {
+  width: 100%;
+  padding: 20px;
+  background-color: #e0e0e0;
+  overflow-y: auto;
+}
+
+.news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e4a3d;
+  height: 50vh;
+  width: 100%;
+}
+
+.exchange {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 2rem;
+  background: rgba(255, 255, 255);
+  color: #4f7061;
+  height: 200px;
+  width: 500px;
+}
+
+.delete {
+  font-size: 24px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
