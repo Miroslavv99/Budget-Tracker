@@ -15,7 +15,9 @@ export class FormHandler {
       let categoryValue = document.querySelector("#category").value;
       let transValue = document.querySelector("#transaction").value;
 
-      if (transValue === "income") {
+      if (sumValue === "") {
+        alert("Please enter amount");
+      } else if (transValue === "income") {
         this.uiController.addIncome(sumValue);
         this.renderer.renderBalance(this.transactionController.updateBalance());
       } else if (
