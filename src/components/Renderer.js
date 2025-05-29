@@ -1,7 +1,6 @@
-import { ca } from "date-fns/locale";
-
 export class Renderer {
-  constructor(uiController) {
+  constructor(uiController, quotesManager) {
+    this.quotesManager = quotesManager;
     this.uiController = uiController;
   }
 
@@ -63,6 +62,6 @@ export class Renderer {
   renderBalance(balance) {
     const balanceCard = document.querySelector(".balance");
 
-    balanceCard.textContent = balance;
+    balanceCard.textContent = `${balance}$`;
   }
 }

@@ -13,23 +13,24 @@ const dataServices = new DataServices();
 const quotesManager = new QuotesManager(dataServices);
 const quotesRenderer = new QuotesRenderer(quotesManager);
 
-document.addEventListener("DOMContentLoaded", () => {
-  quotesRenderer.renderQuotes(
-    "https://v6.exchangerate-api.com/v6/9fad2091430c0d22cdba5b86/latest/USD"
-  );
-});
 const storage = new Storage();
 const transactionController = new TransactionController(storage);
 const uiController = new UIController(transactionController, storage);
-const renderer = new Renderer(uiController);
+const renderer = new Renderer(uiController, quotesManager);
 uiController.renderer = renderer;
 const formHandler = new FormHandler(
   uiController,
   transactionController,
-  renderer
+  renderer,
+  quotesRenderer
 );
 
 formHandler.formInit();
+formHandler.converterInit();
+
+document.addEventListener("DOMContentLoaded", () => {
+  quotesRenderer.renderQuotes("https://api.frankfurter.dev/v1/latest?base=USD");
+});
 
 const expenseButton = document.querySelector(".expense");
 const incomeButton = document.querySelector(".income");

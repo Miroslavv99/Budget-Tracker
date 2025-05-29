@@ -53,10 +53,23 @@ header form button:hover {
   background: linear-gradient(to bottom, #ff8c00, #ed7600);
 }
 
+.balance-div {
+  display: flex;
+}
+
+#currency {
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 .balance {
   background: linear-gradient(to bottom, #e27c00, #c86400);
   border-radius: 8px;
-  width: 150px;
+  width: 180px;
   height: 50px;
   text-align: center;
   color: white;
@@ -64,9 +77,25 @@ header form button:hover {
   line-height: 50px;
 }
 
+.converted-balance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  color: black;
+  font-size: 13px;
+  position: relative;
+  top: 20px;
+  right: 70px;
+  height: 20px;
+  width: 60px;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
 .main-container {
   display: flex;
-  /* width: 100vw; */
   height: 85vh;
 }
 

@@ -1,7 +1,7 @@
 export class Quotes {
-  constructor(eur, uah, gbp, czk) {
+  constructor(eur, pln, gbp, czk) {
     this.eur = eur;
-    this.uah = uah;
+    this.pln = pln;
     this.gbp = gbp;
     this.czk = czk;
   }

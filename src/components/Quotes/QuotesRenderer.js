@@ -7,15 +7,15 @@ export class QuotesRenderer {
     const quotesContainer = document.querySelector(".exchange");
 
     try {
-      const data = await this.quoteManager.createQuotes(url);
+      const data = await this.quoteManager.getQuotes(url);
 
       const eur = document.createElement("div");
       eur.textContent = `EUR: ${data.eur}`;
       quotesContainer.appendChild(eur);
 
-      const uah = document.createElement("div");
-      uah.textContent = `UAH: ${data.uah}`;
-      quotesContainer.appendChild(uah);
+      const pln = document.createElement("div");
+      pln.textContent = `PLN: ${data.pln}`;
+      quotesContainer.appendChild(pln);
 
       const gbp = document.createElement("div");
       gbp.textContent = `GBP: ${data.gbp}`;
@@ -27,5 +27,12 @@ export class QuotesRenderer {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  async renderConverted(balance, currency) {
+    const balanceCard = document.querySelector(".converted-balance");
+    const convertedBalance = await this.quoteManager.convert(balance, currency);
+
+    balanceCard.textContent = `${convertedBalance.toFixed(1)} ${currency}`;
   }
 }

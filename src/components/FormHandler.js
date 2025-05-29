@@ -1,8 +1,9 @@
 export class FormHandler {
-  constructor(uiController, transactionController, renderer) {
+  constructor(uiController, transactionController, renderer, quotesRenderer) {
     this.uiController = uiController;
     this.transactionController = transactionController;
     this.renderer = renderer;
+    this.quotesRenderer = quotesRenderer;
   }
 
   formInit() {
@@ -31,6 +32,30 @@ export class FormHandler {
       }
 
       mainForm.reset();
+    });
+  }
+
+  converterInit() {
+    const currencySelector = document.querySelector("#currency");
+
+    currencySelector.addEventListener("change", async (event) => {
+      const currency = event.target.value;
+      const balance = this.transactionController.updateBalance();
+
+      switch (currency) {
+        case "eur":
+          await this.quotesRenderer.renderConverted(balance, "EUR");
+          break;
+        case "pln":
+          await this.quotesRenderer.renderConverted(balance, "PLN");
+          break;
+        case "gbp":
+          await this.quotesRenderer.renderConverted(balance, "GBP");
+          break;
+        case "czk":
+          await this.quotesRenderer.renderConverted(balance, "CZK");
+          break;
+      }
     });
   }
 }

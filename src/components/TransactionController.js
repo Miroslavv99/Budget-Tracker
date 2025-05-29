@@ -1,5 +1,10 @@
 import { Expense } from "./Expense";
 import { Income } from "./Income";
+import { QuotesManager } from "./Quotes/QuotesManager";
+import { DataServices } from "./Quotes/DataServices";
+
+const dataServices = new DataServices();
+const quotesManager = new QuotesManager(dataServices);
 
 export class TransactionController {
   constructor(storage) {
