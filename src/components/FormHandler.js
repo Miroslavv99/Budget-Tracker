@@ -44,16 +44,16 @@ export class FormHandler {
 
       switch (currency) {
         case "eur":
-          await this.quotesRenderer.renderConverted(balance, "EUR");
+          await this.quotesRenderer.renderConverted(balance, "EUR", "€");
           break;
         case "pln":
-          await this.quotesRenderer.renderConverted(balance, "PLN");
+          await this.quotesRenderer.renderConverted(balance, "PLN", "zł");
           break;
         case "gbp":
-          await this.quotesRenderer.renderConverted(balance, "GBP");
+          await this.quotesRenderer.renderConverted(balance, "GBP", "£");
           break;
         case "czk":
-          await this.quotesRenderer.renderConverted(balance, "CZK");
+          await this.quotesRenderer.renderConverted(balance, "CZK", "kč");
           break;
       }
     });

@@ -29,10 +29,10 @@ export class QuotesRenderer {
     }
   }
 
-  async renderConverted(balance, currency) {
+  async renderConverted(balance, currency, symbol) {
     const balanceCard = document.querySelector(".converted-balance");
     const convertedBalance = await this.quoteManager.convert(balance, currency);
 
-    balanceCard.textContent = `${convertedBalance.toFixed(1)} ${currency}`;
+    balanceCard.textContent = `${convertedBalance.toFixed(1)} ${symbol}`;
   }
 }
