@@ -2,6 +2,7 @@ import { Expense } from "./Expense";
 import { Income } from "./Income";
 import { QuotesManager } from "./Quotes/QuotesManager";
 import { DataServices } from "./Quotes/DataServices";
+import { th } from "date-fns/locale";
 
 const dataServices = new DataServices();
 const quotesManager = new QuotesManager(dataServices);
@@ -43,19 +44,17 @@ export class TransactionController {
   }
 
   updateBalance() {
-    let incRes = 0;
-    this.incomes.forEach((el) => {
-      let num = parseInt(el.sum) || 0;
-      incRes += num;
-    });
+    const income = this.incomes.reduce(
+      (acc, curr) => acc + parseInt(curr.sum || 0),
+      0
+    );
 
-    let expRes = 0;
-    this.expenses.forEach((el) => {
-      let num = parseInt(el.sum) || 0;
-      expRes -= num;
-    });
+    const expense = this.expenses.reduce(
+      (acc, curr) => acc + parseInt(curr.sum || 0),
+      0
+    );
 
-    this.balance = incRes + expRes;
+    this.balance = income - expense;
     console.log(this.balance);
     return this.balance;
   }
