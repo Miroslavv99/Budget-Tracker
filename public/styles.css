@@ -197,4 +197,5 @@ select:focus {
   background: none;
   border: none;
   cursor: pointer;
+  color: #4f7061;
 }
