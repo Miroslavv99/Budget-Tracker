@@ -22,7 +22,8 @@ export class Renderer {
       expenseCard.appendChild(category);
 
       const deleteButton = document.createElement("button");
-      deleteButton.textContent = "DELETE";
+      deleteButton.classList.add("delete");
+      deleteButton.innerHTML = "&times;";
       expenseCard.appendChild(deleteButton);
 
       deleteButton.addEventListener("click", () => {
